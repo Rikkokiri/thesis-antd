@@ -20,10 +20,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px; /* 14px in Yle's styles */
-  color: var(--text-primary);
   height: 100vh;
-  background-color: var(--bg-primary);
 }
 
 a,
@@ -33,44 +30,10 @@ a:hover {
   text-decoration: underline;
 }
 
-#root {
-  height: 100%;
-}
-
-#main-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: calc(100% - var(--toolbar-height));
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  place-items: center flex-start;
-  flex: 1 0 auto;
-}
-
-#app-footer {
-  background-color: var(--footer-bg);
-  width: 100%;
-  padding: 21px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 4px 16px;
-  font-size: 14px;
-}
-
-.footer-links a {
-  padding: 12px 24px;
-  font-weight: 700;
+header a,
+header a:hover,
+header a:visited {
+  text-decoration: none;
 }
 
 .page-header {
