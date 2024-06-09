@@ -3,6 +3,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.configPath": ".prettierrc",
   "cSpell.words": [
+    "antd",
     "Avenir",
     "CHAKRA",
     "mantine",
@@ -14,25 +15,25 @@
     "zustand"
   ],
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#77477f",
-    "activityBar.background": "#77477f",
-    "activityBar.foreground": "#e7e7e7",
-    "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#292617",
-    "activityBarBadge.foreground": "#e7e7e7",
+    "activityBar.activeBackground": "#f74e5a",
+    "activityBar.background": "#f74e5a",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#1cf40b",
+    "activityBarBadge.foreground": "#15202b",
     "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#77477f",
-    "statusBar.background": "#58355e",
+    "sash.hoverBorder": "#f74e5a",
+    "statusBar.background": "#f51d2c",
     "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#77477f",
-    "statusBarItem.remoteBackground": "#58355e",
+    "statusBarItem.hoverBackground": "#f74e5a",
+    "statusBarItem.remoteBackground": "#f51d2c",
     "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#58355e",
+    "titleBar.activeBackground": "#f51d2c",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#58355e99",
+    "titleBar.inactiveBackground": "#f51d2c99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#58355E",
+  "peacock.color": "#F51D2C",
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   }
