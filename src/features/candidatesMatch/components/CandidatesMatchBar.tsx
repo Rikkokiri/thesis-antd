@@ -45,6 +45,16 @@ export const CandidatesMatchBar = (
   );
 };
 
+/*
+.column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+*/
+
 const MatchPlaceholder = () => {
   return (
     <div className="column-centered placeholder-match">

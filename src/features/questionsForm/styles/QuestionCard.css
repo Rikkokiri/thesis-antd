@@ -5,12 +5,8 @@
   background-color: var(--card-bg);
   margin-bottom: 1.5rem;
   padding: 5rem 1.5rem;
-  border-radius: var(--border-radius-sm);
+  border-radius: 4px; /* var(--border-radius-sm); */
   max-width: 680px;
-}
-
-.card__header {
-  gap: 1.5rem;
 }
 
 .category {
@@ -26,13 +22,4 @@
   max-width: 343px;
   text-align: center;
   margin: 20px 0;
-}
-
-.info-buttons {
-  margin-top: 6px;
-  margin-bottom: 18px;
-}
-
-.answer__radio {
-  padding-top: 8px;
 }

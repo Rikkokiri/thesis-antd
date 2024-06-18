@@ -4,7 +4,7 @@
   align-items: center;
   background-color: var(--card-bg);
   padding: 24px;
-  border-radius: var(--border-radius-sm);
+  border-radius: 4px; /* var(--border-radius-sm); */
   max-width: 680px;
 }
 

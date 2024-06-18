@@ -28,6 +28,14 @@ export const AnswerCard = (props: ICardProps) => {
 
   const userAnswer = getAnswerByQuestionId(question.id);
 
+  /*
+  .row-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  */
   return (
     <section className="answer-card">
       <div className="row-centered card__header">

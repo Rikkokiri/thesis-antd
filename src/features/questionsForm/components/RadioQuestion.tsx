@@ -1,4 +1,5 @@
 import { RadioRange } from "@components/RadioRange/RadioRange";
+import { RowCentered } from "@layout/index";
 import { TFunction } from "i18next";
 
 interface IRadioQuestionProps {
@@ -12,7 +13,7 @@ export const RadioQuestion = (props: IRadioQuestionProps) => {
   const { t, value, questionId, answerQuestion } = props;
 
   return (
-    <div className="row-centered answer__radio">
+    <RowCentered style={{ paddingTop: 8 }}>
       <RadioRange
         options={[
           {
@@ -35,6 +36,6 @@ export const RadioQuestion = (props: IRadioQuestionProps) => {
         value={value ?? undefined}
         onChange={(value) => answerQuestion(questionId, value)}
       />
-    </div>
+    </RowCentered>
   );
 };

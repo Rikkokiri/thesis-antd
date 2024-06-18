@@ -1,5 +1,8 @@
 import "../styles/CandidateHeader.css";
 import { useCandidateInfo } from "../hooks/useCandidateInfo";
+import { Typography } from "antd";
+
+const { Title } = Typography;
 
 export const CandidateIntroHeader = (
   props: ReturnType<typeof useCandidateInfo>,
@@ -14,7 +17,7 @@ export const CandidateIntroHeader = (
     <div className="candidate-header">
       <div>
         <p className="subtitle m-0">{t("electionName")}</p>
-        <h1 className="heading-1-large m-0">{candidate.name}</h1>
+        <Title className="heading-1-large m-0">{candidate.name}</Title>
       </div>
       {candidate.organization ||
         (candidate.creator && (

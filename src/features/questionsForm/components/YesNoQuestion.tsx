@@ -5,6 +5,7 @@ import { RiThumbDownLine } from "react-icons/ri";
 import { RiThumbDownFill } from "react-icons/ri";
 import { ToggleButton } from "@components/ToggleButton/ToggleButton";
 import { YesNoAnswer } from "@data/types";
+import { RowCentered } from "@layout/index";
 
 interface IYesNoQuestionProps {
   t: TFunction;
@@ -17,7 +18,7 @@ export const YesNoQuestion = (props: IYesNoQuestionProps) => {
   const { answer, answerQuestion, questionId, t } = props;
 
   return (
-    <div className="row-centered gap-24 mt-40">
+    <RowCentered gap={24} style={{ marginTop: "40px" }}>
       <ToggleButton
         isToggled={answer === YesNoAnswer.YES}
         onClick={() => answerQuestion(questionId, YesNoAnswer.YES)}
@@ -34,6 +35,6 @@ export const YesNoQuestion = (props: IYesNoQuestionProps) => {
       >
         {t("question.no")}
       </ToggleButton>
-    </div>
+    </RowCentered>
   );
 };

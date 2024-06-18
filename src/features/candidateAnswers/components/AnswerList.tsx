@@ -6,6 +6,7 @@ import { SectionCard } from "@components/SectionCard.tsx/SectionCard";
 import { ToggleButton } from "@components/ToggleButton/ToggleButton";
 import { FiMinus } from "react-icons/fi";
 import { FiPlus } from "react-icons/fi";
+import { RowCentered } from "@layout/index";
 
 export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
   const { t, questions, candidateAnswers, candidateImgSrc } = props;
@@ -29,7 +30,7 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
           ))}
         </>
         <div className="separator"></div>
-        <div className="answer-list__expand p-24 row-centered">
+        <RowCentered style={{ padding: 24 }}>
           <ToggleButton
             isToggled={isExpanded}
             onClick={() => setExpanded(!isExpanded)}
@@ -40,7 +41,7 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
           >
             {isExpanded ? t("showFewer") : t("showMore")}
           </ToggleButton>
-        </div>
+        </RowCentered>
       </SectionCard>
     </article>
   );

@@ -21,7 +21,7 @@
 }
 
 .match-result__img {
-  border-radius: var(--border-radius-sm);
+  border-radius: 4px; /* var(--border-radius-sm); */
   flex-shrink: 0;
   width: 32px;
   height: 43px;

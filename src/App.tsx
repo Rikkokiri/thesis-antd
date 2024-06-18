@@ -28,12 +28,19 @@ function App() {
     backgroundColor: "var(--toolbar-bg)",
   };
 
+  const contentStyles: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyItems: "flex-start",
+  };
+
   return (
     <Layout style={bodyLayout}>
       <Header style={headerStyles}>
         <Toolbar />
       </Header>
-      <Content>
+      <Content style={contentStyles}>
         <Outlet />
       </Content>
       <Footer>

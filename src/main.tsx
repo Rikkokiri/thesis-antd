@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ConfigProvider, theme } from "antd";
+import { App, ConfigProvider, theme } from "antd";
 import customTheme from "./theme";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
@@ -12,10 +12,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ConfigProvider
       theme={{
         algorithm: theme.defaultAlgorithm,
+        cssVar: true,
+        hashed: false,
         ...customTheme,
       }}
     >
-      <RouterProvider router={router} />
+      <App>
+        <RouterProvider router={router} />
+      </App>
     </ConfigProvider>
   </React.StrictMode>,
 );

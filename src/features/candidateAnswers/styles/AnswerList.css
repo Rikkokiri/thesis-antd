@@ -16,11 +16,3 @@
   max-width: calc(100% - 2 * 24px);
   background-color: var(--separator);
 }
-
-.answer-list__expand-button.toggled {
-  background-color: transparent;
-}
-
-.answer-list__expand-button:hover {
-  background-color: var(--button-outline-bg-hover);
-}

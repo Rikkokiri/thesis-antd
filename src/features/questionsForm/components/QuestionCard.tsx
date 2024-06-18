@@ -2,12 +2,13 @@ import "../styles/QuestionCard.css";
 import { useTranslation } from "react-i18next";
 import { ToggleButton } from "../../../components/ToggleButton/ToggleButton";
 import { FiEyeOff } from "react-icons/fi";
-import { Tag } from "../../../components/Tag/Tag";
+import { Tag } from "antd";
 import { Category, Question } from "@data/types";
 import { Answer } from "@stores/answerStore";
 import { RadioQuestion } from "./RadioQuestion";
 import { YesNoQuestion } from "./YesNoQuestion";
 import { AdditionalInfo } from "./AdditionalInfo";
+import { RowCentered } from "@layout/index";
 
 interface ICardProps {
   category: Category;
@@ -33,12 +34,12 @@ export const QuestionCard = (props: ICardProps) => {
 
   return (
     <section className="card">
-      <div className="row-centered card__header">
-        <Tag>{`${questionNumber}/${questionsCount}`}</Tag>
+      <RowCentered gap="1.5rem">
+        <Tag bordered={false}>{`${questionNumber}/${questionsCount}`}</Tag>
         <p className="category">{category.name.en}</p>
-      </div>
+      </RowCentered>
       <h2 className="question">{question.question.en}</h2>
-      <div className="row-centered info-buttons">
+      <RowCentered style={{ marginTop: "6px", marginBottom: "18px" }}>
         {question.additionalInfo && (
           <AdditionalInfo t={t} info={question.additionalInfo} />
         )}
@@ -52,7 +53,7 @@ export const QuestionCard = (props: ICardProps) => {
         >
           {t("question.hide")}
         </ToggleButton>
-      </div>
+      </RowCentered>
       {question.questionType === "yes-no" ? (
         <YesNoQuestion
           answerQuestion={answerQuestion}

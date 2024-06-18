@@ -7,6 +7,8 @@ import { QuestionForm } from "../features/questionsForm";
 import { CandidatesMatch } from "src/features/candidatesMatch";
 import { getQuestionsTotalCount } from "@data/api";
 import { useRef } from "react";
+import { Flex, Typography } from "antd";
+const { Title } = Typography;
 
 export const QuestionsPage = () => {
   const { t } = useTranslation();
@@ -16,14 +18,28 @@ export const QuestionsPage = () => {
   });
   const questionsStartRef = useRef<HTMLDivElement | null>(null);
 
+  const PageHeaderStyles: React.CSSProperties = {
+    width: "100%",
+    textAlign: "center",
+    backgroundColor: "var(--page-header-bg)",
+    padding: "2rem 0",
+  };
+
   return (
     <>
       {inView && <CandidatesMatch />}
-      <section className="question-page__header">
-        <p className="subtitle m-0">{t("electionName")}</p>
-        <h1 className="heading-1 question-page__title">
+      <Flex
+        component="section"
+        vertical
+        align="center" /* className="question-page__header"*/
+        style={PageHeaderStyles}
+      >
+        <p className="subtitle" style={{ margin: 0 }}>
+          {t("electionName")}
+        </p>
+        <Title className="heading-1 question-page__title">
           {t("questionPage.findYourCandidate")}
-        </h1>
+        </Title>
         <p className="page-intro">{t("questionPage.description")}</p>
 
         <Button
@@ -38,7 +54,7 @@ export const QuestionsPage = () => {
           {t("questionPage.findYourCandidate")}
         </Button>
         <div ref={questionsStartRef} />
-      </section>
+      </Flex>
       <div className="question-page__content" ref={ref}>
         <QuestionForm />
       </div>

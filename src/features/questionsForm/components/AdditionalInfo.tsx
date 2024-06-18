@@ -35,7 +35,9 @@ export const AdditionalInfo = (props: IAdditionalInfoProps) => {
           setIsModalOpen(false);
         }}
       >
-        <h3 className="heading-3 pb-8">{t("question.whatAbout")}</h3>
+        <h3 className="heading-3" style={{ paddingBottom: 8 }}>
+          {t("question.whatAbout")}
+        </h3>
         <p className="body-small">{localize(info)}</p>
       </Modal>
     </>

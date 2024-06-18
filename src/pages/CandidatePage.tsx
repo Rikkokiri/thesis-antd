@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { CandidateInfo, CandidateHeader } from "src/features/candidateInfo";
 import { CandidateAnswers } from "src/features/candidateAnswers";
 import { useEffect } from "react";
+import { PageSectionsColumn } from "@layout/index";
 
 export const CandidatePage = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,10 +18,10 @@ export const CandidatePage = () => {
   return (
     <>
       <CandidateHeader candidateId={candidate.id} />
-      <div className="page-sections__column mb-24">
+      <PageSectionsColumn style={{ marginBottom: "24px" }}>
         <CandidateInfo candidateId={candidate.id} />
         <CandidateAnswers candidate={candidate} />
-      </div>
+      </PageSectionsColumn>
     </>
   );
 };

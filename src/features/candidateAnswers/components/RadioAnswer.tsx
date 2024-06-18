@@ -11,6 +11,14 @@ interface IRadioAnswerProps {
 export const RadioAnswer = (props: IRadioAnswerProps) => {
   const { t, candidateAnswer, userAnswer, candidateImgSrc } = props;
 
+  /*
+  .row-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  */
   return (
     <div className="row-centered answer__radio">
       <DisplayRadioRange

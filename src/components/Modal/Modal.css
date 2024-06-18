@@ -31,6 +31,6 @@ dialog.modal::backdrop {
   position: absolute;
   top: 16px;
   right: 16px;
-  border-radius: var(--border-radius-sm);
+  border-radius: 4px; /* var(--border-radius-sm); */
   margin-left: 4px;
 }
