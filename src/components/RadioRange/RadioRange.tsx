@@ -1,3 +1,4 @@
+import { Radio, RadioChangeEvent } from "antd";
 import "./RadioRange.css";
 
 interface RadioOption {
@@ -15,31 +16,20 @@ interface RadioRangeProps {
 
 export const RadioRange = (props: RadioRangeProps) => {
   return (
-    <div className="radio-range">
-      {props.options.map((option, index) => {
-        const isChecked = props.value == option.value;
-        const optionClass = option.optionClassName ?? "";
-
-        return (
-          <div
-            className={`radio-range__option ${optionClass}`}
-            key={`radio-option-${option.value}`}
-          >
-            <input
-              type="radio"
-              name="radio-option"
-              id={`radio-option-${option.value}`}
-              value={option.value}
-              checked={isChecked}
-              onChange={() => props.onChange(option.value)}
-              readOnly={!!props.isReadonly}
-              className={props.isReadonly ? "readonly" : ""}
-            />
-            {isChecked && <div className={`option__indicator`}></div>}
-            <label key={index}>{option.label}</label>
-          </div>
-        );
-      })}
-    </div>
+    <Radio.Group
+      className="radio-range"
+      value={props.value}
+      onChange={(e: RadioChangeEvent) => props.onChange(e.target.value)}
+    >
+      {props.options.map((option) => (
+        <Radio
+          className={`radio-range__option ${option.optionClassName ?? ""}`}
+          key={`radio-option-${option.value}`}
+          value={option.value}
+        >
+          {option.label}
+        </Radio>
+      ))}
+    </Radio.Group>
   );
 };

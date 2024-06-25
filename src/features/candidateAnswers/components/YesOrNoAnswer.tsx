@@ -66,7 +66,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                   <RiThumbDownLine />
                 )
               }
-              style={{ marginBottom: "0.5rem" }}
+              style={{ marginTop: "0.5rem" }}
             >
               {option.label}
             </ToggleButton>

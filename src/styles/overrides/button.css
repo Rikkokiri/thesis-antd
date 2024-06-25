@@ -15,3 +15,13 @@
 .eb-button .icon-24 {
   font-size: 24px;
 }
+
+.eb-button:focus {
+  outline: none;
+}
+
+/* TODO: Define as base style? */
+.eb-button:focus-visible {
+  outline: 2px solid var(--focus-outline-primary);
+  outline-offset: 2px;
+}

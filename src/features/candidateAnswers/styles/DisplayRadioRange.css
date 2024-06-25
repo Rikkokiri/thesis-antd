@@ -27,11 +27,6 @@
   text-align: center;
 }
 
-.radio-display label {
-  font-size: 0.75rem;
-  margin-top: 0.75rem;
-}
-
 .radio-display:has(.user-answer-bubble) {
   margin-top: 70px;
 }
@@ -56,51 +51,14 @@
   text-align: right;
 }
 
-.radio-display input[type="radio"] {
-  appearance: none;
-  cursor: pointer;
-  border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
-  background-color: var(--radio-background);
-  margin: 0;
-}
-
-.radio-display .option__indicator {
+.radio-display .candidate-indicator {
   cursor: pointer;
   position: absolute;
-  top: 0.25rem;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
-  background-color: var(--radio-background);
-}
-
-.radio-display .option__indicator:has(.candidate-indicator) {
-  background-color: inherit;
-}
-
-.radio-display .user-answer .candidate-indicator {
-  clip-path: polygon(-1px -1px, 50% -1px, 50% 100%, -1px 100%);
-}
-
-.radio-display .candidate-answer {
   z-index: 2;
+  top: 0.25rem;
+  left: 0.25rem;
 }
 
-.radio-display .disagree .option__indicator {
-  background-color: var(--disagree);
-}
-
-.radio-display .agree .option__indicator {
-  background-color: var(--agree);
-}
-
-.radio-display input:checked + .option__indicator {
-  outline: 0.25rem solid var(--radio-background);
-}
-
-.radio-display input[type="radio"].readonly,
-.radio-display input[type="radio"].readonly + .option__indicator {
-  cursor: not-allowed;
+.user-answer .candidate-indicator {
+  clip-path: polygon(-1px -1px, 50% -1px, 50% 100%, -1px 100%);
 }

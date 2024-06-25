@@ -6,6 +6,7 @@
 @import "./overrides/button.css";
 @import "./overrides/card.css";
 @import "./overrides/modal.css";
+@import "./overrides/radio.css";
 @import "./overrides/tag.css";
 @import "./overrides/typography.css";
 @import "./themes/dark-theme.css";

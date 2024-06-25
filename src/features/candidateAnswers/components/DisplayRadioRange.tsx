@@ -3,6 +3,7 @@ import "../styles/DisplayRadioRange.css";
 import { SmallSpeechBubble } from "./SmallSpeechBubble";
 import { useTranslation } from "react-i18next";
 import { CandidateIndicator } from "./CandidateIndicator";
+import { Radio } from "antd";
 
 interface IDisplayRadioOption {
   value: number;
@@ -31,32 +32,24 @@ export const DisplayRadioRange = (props: IDisplayRadioRangeProps) => {
 
         return (
           <div
-            className={`radio-display__option ${optionClass}`}
+            className={`radio-display__option ${optionClass} ${option.indicatorClassName}`}
             key={`radio-option-${option.value}`}
           >
-            <input
-              type="radio"
-              name="radio-option"
-              id={`radio-option-${option.value}`}
+            {candidateAnswer === option.value && (
+              <CandidateIndicator
+                className="candidate-indicator"
+                imgSrc={option.indicatorImgSrc ?? ""}
+                alt={""} // TODO: Meaningful alt text
+              />
+            )}
+            <Radio
+              style={{ position: "relative" }}
               value={option.value}
               checked={option.isChecked}
-              readOnly={true}
-              className={props.isReadonly ? "readonly" : ""}
-            />
-            {option.isChecked && (
-              <div
-                className={`option__indicator ${option.indicatorClassName ?? ""}`}
-              >
-                {candidateAnswer === option.value && (
-                  <CandidateIndicator
-                    imgSrc={option.indicatorImgSrc ?? ""}
-                    className="candidate-indicator"
-                    alt={""} // TODO: Meaningful alt text
-                  />
-                )}
-              </div>
-            )}
-            <label>{option.label}</label>
+              className={`${props.isReadonly ? "readonly" : ""}`}
+            >
+              {option.label}
+            </Radio>
             {userAnswer === option.value && (
               <SmallSpeechBubble
                 content={t("question.yourAnswer")}

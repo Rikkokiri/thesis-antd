@@ -52,6 +52,10 @@ export const baseTheme: ThemeConfig = {
     Card: {
       headerFontSize: 20,
     },
+    Radio: {
+      radioSize: 32,
+      // dotSize: 24,
+    },
     Typography: {
       titleMarginBottom: 0,
       titleMarginTop: 0,

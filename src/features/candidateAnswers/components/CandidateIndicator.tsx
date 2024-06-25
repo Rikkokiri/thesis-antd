@@ -18,7 +18,7 @@ export const CandidateIndicator = ({
       height={size}
       src={imgSrc}
       alt={alt}
-      className={`candidate-indicator ${className || ""}`}
+      className={className}
     />
   );
 };

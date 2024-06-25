@@ -31,6 +31,7 @@ export const AnswerCard = (props: ICardProps) => {
 
   return (
     <Flex
+      className="answer-card"
       component="section"
       vertical
       align="center"
