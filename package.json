@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "test": "vitest run",
     "test:w": "vitest",
+    "typecheck": "tsc --noEmit",
     "cy:open": "cypress open",
     "e2e:chrome": "cypress run --browser chrome",
     "cy:screenshots": "cypress run --browser chrome --spec cypress/e2e/screenshot-tests/*",
