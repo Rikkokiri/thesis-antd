@@ -6,7 +6,7 @@ import { CandidatesMatch } from "src/features/candidatesMatch";
 import { getQuestionsTotalCount } from "@data/api";
 import { useRef } from "react";
 import { Button, Flex, Typography } from "antd";
-import { TextProps } from "antd/es/typography/Text";
+import { TextProps } from "antd/lib/typography/Text";
 const { Text, Title } = Typography;
 
 const PageIntro = (props: TextProps) => {
@@ -41,17 +41,13 @@ export const QuestionsPage = () => {
       <Flex
         component="section"
         vertical
-        align="center" /* className="question-page__header"*/
+        align="center"
         style={PageHeaderStyles}
       >
         <Text className="subtitle" style={{ margin: 0 }}>
           {t("electionName")}
         </Text>
-        <Title
-          level={1}
-          style={{ lineHeight: 1.3, fontWeight: 900 }}
-          className="heading-1"
-        >
+        <Title level={1} style={{ fontWeight: 900 }}>
           {t("questionPage.findYourCandidate")}
         </Title>
         <PageIntro>{t("questionPage.description")}</PageIntro>

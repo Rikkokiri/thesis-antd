@@ -9,7 +9,7 @@ export const PageSectionsColumn = ({ style, ...rest }: FlexPropsWithStyles) => {
   return (
     <Flex
       vertical
-      gap={6}
+      gap={"1.5rem"}
       style={{ maxWidth: "680px", width: "100%", ...style }}
       {...rest}
     />

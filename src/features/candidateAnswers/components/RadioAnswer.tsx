@@ -1,3 +1,4 @@
+import { RowCentered } from "@layout/index";
 import { DisplayRadioRange } from "./DisplayRadioRange";
 import { TFunction } from "i18next";
 
@@ -11,23 +12,15 @@ interface IRadioAnswerProps {
 export const RadioAnswer = (props: IRadioAnswerProps) => {
   const { t, candidateAnswer, userAnswer, candidateImgSrc } = props;
 
-  /*
-  .row-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  */
   return (
-    <div className="row-centered answer__radio">
+    <RowCentered style={{ paddingTop: "0.5rem" }}>
       <DisplayRadioRange
         options={buildOptions(t, candidateAnswer, userAnswer, candidateImgSrc)}
         candidateAnswer={candidateAnswer}
         userAnswer={userAnswer}
         isReadonly
       />
-    </div>
+    </RowCentered>
   );
 };
 

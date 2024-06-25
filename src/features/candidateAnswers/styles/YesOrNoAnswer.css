@@ -1,12 +1,3 @@
-.yes-or-no-answer__container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  gap: 24px;
-  position: relative;
-}
-
 .yes-or-no-answer__container:has(.user-answer-bubble) {
   margin-top: 50px;
   margin-bottom: 10px;

@@ -1,17 +1,24 @@
-import "../styles/CandidateImgIndicator.css";
-
 interface ICandidateIndicatorProps {
   alt: string;
   className?: string;
   imgSrc: string;
+  size?: string;
 }
 
-export const CandidateIndicator = (props: ICandidateIndicatorProps) => {
+export const CandidateIndicator = ({
+  alt,
+  className,
+  imgSrc,
+  size = "24px",
+}: ICandidateIndicatorProps) => {
   return (
     <img
-      src={props.imgSrc}
-      alt={props.alt}
-      className={`candidate-indicator ${props.className || ""}`}
+      style={{ borderRadius: "50%", backgroundColor: "var(--card-bg)" }}
+      width={size}
+      height={size}
+      src={imgSrc}
+      alt={alt}
+      className={`candidate-indicator ${className || ""}`}
     />
   );
 };
