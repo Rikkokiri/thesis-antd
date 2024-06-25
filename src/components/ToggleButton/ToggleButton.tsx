@@ -1,38 +1,38 @@
-import { Button, ButtonVariant, ISharedButtonProps } from "../Button/Button";
+import { Button, ButtonProps } from "antd";
 import "./ToggleButton.css";
 
-type ToggleButtonVariant = Extract<ButtonVariant, "outline" | "ghost">;
-
-interface IToggleButtonProps extends ISharedButtonProps {
+interface IToggleButtonProps extends ButtonProps {
   isToggled: boolean;
   untoggledIcon?: JSX.Element;
   toggledIcon?: JSX.Element;
-  variant?: ToggleButtonVariant;
   toggledClassName?: string;
 }
 
 export const ToggleButton = ({
   children,
   isToggled,
-  isDisabled,
   onClick,
   untoggledIcon,
   toggledIcon,
-  variant = "outline",
-  size,
-  iconSize,
-  className,
-  toggledClassName = "toggled",
+  type = "primary",
+  toggledType = "default",
+  size = "large",
+  // iconSize,
+  // className,
+  // toggledClassName = "toggled",
+  ...rest
 }: IToggleButtonProps) => {
   return (
     <Button
       onClick={onClick}
-      iconBefore={isToggled ? toggledIcon : untoggledIcon}
-      className={`toggle-button ${isToggled ? toggledClassName : ""} ${className || ""}`}
-      variant={variant}
+      icon={isToggled ? toggledIcon : untoggledIcon}
+      // className={`toggle-button ${isToggled ? toggledClassName : ""} ${className || ""}`}
+      // variant={variant}
+      type={isToggled ? toggledType : type}
+      ghost={!isToggled}
       size={size}
-      isDisabled={isDisabled}
-      iconSize={iconSize}
+      // iconSize={iconSize}
+      {...rest}
     >
       {children}
     </Button>

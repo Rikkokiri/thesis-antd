@@ -2,13 +2,15 @@ import "../styles/QuestionCard.css";
 import { useTranslation } from "react-i18next";
 import { ToggleButton } from "../../../components/ToggleButton/ToggleButton";
 import { FiEyeOff } from "react-icons/fi";
-import { Tag } from "antd";
+import { Card, Tag, Typography } from "antd";
 import { Category, Question } from "@data/types";
 import { Answer } from "@stores/answerStore";
 import { RadioQuestion } from "./RadioQuestion";
 import { YesNoQuestion } from "./YesNoQuestion";
 import { AdditionalInfo } from "./AdditionalInfo";
 import { RowCentered } from "@layout/index";
+
+const { Title, Text } = Typography;
 
 interface ICardProps {
   category: Category;
@@ -33,12 +35,14 @@ export const QuestionCard = (props: ICardProps) => {
   const questionNumber = category.position + question.position + 1;
 
   return (
-    <section className="card">
+    <Card /*section className="card"*/ bordered={false}>
       <RowCentered gap="1.5rem">
         <Tag bordered={false}>{`${questionNumber}/${questionsCount}`}</Tag>
-        <p className="category">{category.name.en}</p>
+        <Text className="category">{category.name.en}</Text>
       </RowCentered>
-      <h2 className="question">{question.question.en}</h2>
+      <Title level={2} className="question">
+        {question.question.en}
+      </Title>
       <RowCentered style={{ marginTop: "6px", marginBottom: "18px" }}>
         {question.additionalInfo && (
           <AdditionalInfo t={t} info={question.additionalInfo} />
@@ -48,8 +52,8 @@ export const QuestionCard = (props: ICardProps) => {
           isToggled={!!answer?.hideQuestion}
           untoggledIcon={<FiEyeOff />}
           toggledIcon={<FiEyeOff />}
-          variant="ghost"
-          size="small"
+          // variant="ghost"
+          size="middle"
         >
           {t("question.hide")}
         </ToggleButton>
@@ -69,6 +73,6 @@ export const QuestionCard = (props: ICardProps) => {
           value={answer?.answer ?? null}
         />
       )}
-    </section>
+    </Card>
   );
 };

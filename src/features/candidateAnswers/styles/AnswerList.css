@@ -9,10 +9,3 @@
 .answer-list .answer-card:last-of-type {
   border-bottom: none;
 }
-
-.answer-list .separator {
-  margin: 0 auto;
-  height: 1px;
-  max-width: calc(100% - 2 * 24px);
-  background-color: var(--separator);
-}

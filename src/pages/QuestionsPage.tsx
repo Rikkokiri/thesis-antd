@@ -1,14 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import "./QuestionsPage.css";
-import { Button } from "../components/Button/Button";
 import { FiArrowDown } from "react-icons/fi";
 import { QuestionForm } from "../features/questionsForm";
 import { CandidatesMatch } from "src/features/candidatesMatch";
 import { getQuestionsTotalCount } from "@data/api";
 import { useRef } from "react";
-import { Flex, Typography } from "antd";
-const { Title } = Typography;
+import { Button, Flex, Typography } from "antd";
+const { Text, Title } = Typography;
 
 export const QuestionsPage = () => {
   const { t } = useTranslation();
@@ -34,16 +33,18 @@ export const QuestionsPage = () => {
         align="center" /* className="question-page__header"*/
         style={PageHeaderStyles}
       >
-        <p className="subtitle" style={{ margin: 0 }}>
+        <Text className="subtitle" style={{ margin: 0 }}>
           {t("electionName")}
-        </p>
-        <Title className="heading-1 question-page__title">
+        </Text>
+        <Title level={1} className="heading-1 question-page__title">
           {t("questionPage.findYourCandidate")}
         </Title>
-        <p className="page-intro">{t("questionPage.description")}</p>
+        <Text className="page-intro">{t("questionPage.description")}</Text>
 
         <Button
-          iconBefore={<FiArrowDown />}
+          icon={<FiArrowDown />}
+          type="primary"
+          size="large"
           onClick={() => {
             console.log("Scroll to first question!");
             questionsStartRef.current?.scrollIntoView({

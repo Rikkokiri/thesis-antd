@@ -1,6 +1,11 @@
 import { Flex, FlexProps } from "antd";
+import * as React from "react";
 
-export const PageSectionsColumn = ({ style, ...rest }: FlexProps) => {
+interface FlexPropsWithStyles extends FlexProps {
+  style?: React.CSSProperties;
+}
+
+export const PageSectionsColumn = ({ style, ...rest }: FlexPropsWithStyles) => {
   return (
     <Flex
       vertical
@@ -11,7 +16,7 @@ export const PageSectionsColumn = ({ style, ...rest }: FlexProps) => {
   );
 };
 
-export const RowCentered = ({ style, ...rest }: FlexProps) => {
+export const RowCentered = ({ style, ...rest }: FlexPropsWithStyles) => {
   return (
     <Flex
       justify="center"

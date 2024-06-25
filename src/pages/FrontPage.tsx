@@ -1,12 +1,10 @@
-import { Button } from "@components/Button/Button";
-import { SectionCard } from "@components/SectionCard.tsx/SectionCard";
 import { useAnswerStore } from "@stores/answerStore";
 import { useTranslation } from "react-i18next";
 import { FiChevronRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { Route } from "src/routes";
 import { PageSectionsColumn } from "@layout/index";
-import { Typography } from "antd";
+import { Button, Card, Typography } from "antd";
 
 const { Title } = Typography;
 
@@ -22,20 +20,33 @@ export const FrontPage = () => {
 
   return (
     <>
-      <div className="page-header">
+      <div
+        style={{
+          padding: "1.5rem",
+          textAlign: "center",
+          backgroundColor: "var(--page-header-bg)", // TODO: Fix
+          width: "100%",
+        }}
+      >
         <Title style={{ marginBottom: "1rem" }} className="heading-1">
           {t("frontPage.title")}
         </Title>
-        <Button iconAfter={<FiChevronRight />} onClick={startCompass}>
+        <Button
+          type="primary"
+          size="large"
+          icon={<FiChevronRight />}
+          iconPosition="end"
+          onClick={startCompass}
+        >
           {t("frontPage.start")}
         </Button>
       </div>
       <PageSectionsColumn
         style={{ paddingTop: "1.5rem", paddingBottom: "1.5rem" }}
       >
-        <SectionCard title={t("candidates")}>
+        <Card title={t("candidates")}>
           <div></div>
-        </SectionCard>
+        </Card>
       </PageSectionsColumn>
     </>
   );
