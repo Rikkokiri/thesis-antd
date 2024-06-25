@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
-import "../styles/CommentCard.css";
+import { Flex, theme } from "antd";
 import { QuestionType, YesNoAnswer } from "@data/types";
+import "../styles/CommentCard.css";
+
+const { useToken } = theme;
 
 interface ICommentCardProps {
   header: ReactNode;
@@ -11,6 +14,7 @@ interface ICommentCardProps {
 
 export const CommentCard = (props: ICommentCardProps) => {
   const { header, body, answer, questionType } = props;
+  const { token } = useToken();
 
   const arrowPosition = (
     answer: number | undefined,
@@ -24,8 +28,10 @@ export const CommentCard = (props: ICommentCardProps) => {
   };
 
   return (
-    <div
+    <Flex
+      vertical
       className={`comment-card answer-${questionType === QuestionType.AGREE_SCALE && "scale"}`}
+      style={{ borderRadius: token.borderRadius }}
     >
       <div
         className="comment-card__arrow"
@@ -36,6 +42,6 @@ export const CommentCard = (props: ICommentCardProps) => {
       ></div>
       <div className="comment-card__header">{header}</div>
       <div className="comment-card__body">{body}</div>
-    </div>
+    </Flex>
   );
 };

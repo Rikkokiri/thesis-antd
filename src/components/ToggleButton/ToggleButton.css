@@ -1,5 +1,4 @@
-.toggle-button.toggled,
-.toggle-button.toggled:hover {
+.toggle-button.toggled {
   background-color: var(--button-toggled-bg);
 }
 

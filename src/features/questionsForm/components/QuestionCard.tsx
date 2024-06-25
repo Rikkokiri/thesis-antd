@@ -48,7 +48,7 @@ export const QuestionCard = (props: ICardProps) => {
     >
       <RowCentered gap="1.5rem">
         <Tag bordered={false}>{`${questionNumber}/${questionsCount}`}</Tag>
-        <Text className="category">{category.name.en}</Text>
+        <Text className="bold-label">{category.name.en}</Text>
       </RowCentered>
       <Title level={2} className="question">
         {question.question.en}
@@ -63,7 +63,7 @@ export const QuestionCard = (props: ICardProps) => {
           untoggledIcon={<FiEyeOff />}
           toggledIcon={<FiEyeOff />}
           type="text"
-          toggledType="default"
+          toggledType="text"
           size="middle"
         >
           {t("question.hide")}

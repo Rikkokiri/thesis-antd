@@ -1,6 +1,5 @@
-import "../styles/AnswerCard.css";
 import { useTranslation } from "react-i18next";
-import { Tag, Typography } from "antd";
+import { Flex, Tag, Typography } from "antd";
 import { Question } from "@data/types";
 import { RadioAnswer } from "./RadioAnswer";
 import { YesOrNoAnswer } from "./YesOrNoAnswer";
@@ -31,7 +30,12 @@ export const AnswerCard = (props: ICardProps) => {
   const userAnswer = getAnswerByQuestionId(question.id);
 
   return (
-    <section className="answer-card">
+    <Flex
+      component="section"
+      vertical
+      align="center"
+      style={{ padding: "1.5rem" }}
+    >
       <RowCentered>
         <Tag
           bordered={false}
@@ -65,6 +69,6 @@ export const AnswerCard = (props: ICardProps) => {
           answer={candidateAnswer?.answer}
         />
       )}
-    </section>
+    </Flex>
   );
 };

@@ -46,7 +46,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
         const isToggled = candidateAnswer === option.value;
 
         return (
-          <div className="yes-or-no-answer__option" key={option.value}>
+          <Flex vertical align="center" key={option.value}>
             <ToggleButton
               disabled={true}
               isToggled={isToggled}
@@ -59,7 +59,6 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                   imgSrc={candidateImgSrc}
                 />
               }
-              // iconSize={isToggled ? 24 : undefined}
               untoggledIcon={
                 option.value === YesNoAnswer.YES ? (
                   <RiThumbUpLine />
@@ -67,6 +66,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                   <RiThumbDownLine />
                 )
               }
+              style={{ marginBottom: "0.5rem" }}
             >
               {option.label}
             </ToggleButton>
@@ -78,7 +78,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                 className="user-answer-bubble"
               />
             )}
-          </div>
+          </Flex>
         );
       })}
     </Flex>

@@ -3,11 +3,8 @@
   width: 100%;
   position: relative;
   background-color: var(--candidate-comment-bg);
-  display: flex;
-  flex-direction: column;
   gap: 20px;
   padding: 8px 16px 16px;
-  border-radius: 4px; /* var(--border-radius-sm); */
   font-size: 14px;
   margin: 12px 10px 0;
 }
