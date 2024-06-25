@@ -2,9 +2,9 @@ import { ThemeConfig } from "antd";
 
 export const darkTheme: ThemeConfig = {
   token: {
-    colorPrimary: "var(--gray-5)",
+    colorPrimary: "#f8f9fa", // "var(--gray-5)",
     colorText: "var(--gray-5)",
-    colorTextBase: "var(--gray-5)",
+    // colorTextBase: "var(--gray-5)",
     // colorBgContainer
     colorBgContainer: "var(--blue-black)",
     colorPrimaryHover: "var(--white-71)",

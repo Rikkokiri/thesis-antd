@@ -54,6 +54,7 @@ function App() {
     >
       <ConfigProvider
         theme={{
+          // algorithm: theme.defaultAlgorithm,
           // With the algorithm, dark theme colors will be derived
           // from the default theme colors. While this provides
           // a quick consistent look, it does not allow for fine

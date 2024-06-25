@@ -6,8 +6,6 @@ import { ThemeConfig } from "antd";
 
 export const baseTheme: ThemeConfig = {
   token: {
-    /* colorPrimary: "var(--blue-black)",
-    colorTextBase: "var(--blue-black)", */
     // Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`.
     // colorBgContainer: "#fff",
     borderRadius: 4,

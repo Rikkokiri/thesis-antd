@@ -22,6 +22,5 @@
   font-size: 20px;
   line-height: 140%;
   font-weight: 900;
-  border-bottom-width: 2px;
-  border-bottom-color: var(--bg-primary);
+  border-bottom: var(--section-card-header-border);
 }

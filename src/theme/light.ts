@@ -6,7 +6,7 @@ import { ThemeConfig } from "antd";
 
 export const lightTheme: ThemeConfig = {
   token: {
-    colorPrimary: "var(--blue-black)",
+    colorPrimary: "#131415", // "var(--blue-black)",
     colorText: "var(--blue-black)",
     // Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`.
     // colorBgContainer: "#fff",
