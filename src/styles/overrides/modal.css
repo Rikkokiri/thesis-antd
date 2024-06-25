@@ -1,0 +1,12 @@
+.ant-modal {
+  max-width: 343px;
+}
+
+.ant-modal .ant-modal-content {
+  border-radius: 0;
+  padding: 1rem;
+}
+
+.ant-modal .ant-modal-footer {
+  margin-top: 0;
+}

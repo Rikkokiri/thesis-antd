@@ -1,7 +1,7 @@
 import { PromiseList } from "./PromiseList";
 import { useCandidateInfo } from "../hooks/useCandidateInfo";
-import { SectionCard } from "@components/SectionCard.tsx/SectionCard";
 import { BackgroundDetailsGrid } from "./BackgroundDetailsGrid";
+import { Card } from "antd";
 
 export const CandidateInfoContent = (
   props: ReturnType<typeof useCandidateInfo>,
@@ -11,14 +11,14 @@ export const CandidateInfoContent = (
   return (
     <>
       {promises && (
-        <SectionCard title={t("candidateSections.electionPromises")}>
+        <Card title={t("candidateSections.electionPromises")} bordered={false}>
           <PromiseList items={promises} />
-        </SectionCard>
+        </Card>
       )}
       {candidate && (
-        <SectionCard title={t("candidateSections.backgroundInfo")}>
+        <Card title={t("candidateSections.backgroundInfo")} bordered={false}>
           <BackgroundDetailsGrid t={t} candidate={candidate} />
-        </SectionCard>
+        </Card>
       )}
     </>
   );

@@ -1,6 +1,6 @@
 import "../styles/AnswerCard.css";
 import { useTranslation } from "react-i18next";
-import { Tag } from "../../../components/Tag/Tag";
+import { Tag } from "antd";
 import { Question } from "@data/types";
 import { RadioAnswer } from "./RadioAnswer";
 import { YesOrNoAnswer } from "./YesOrNoAnswer";
@@ -28,10 +28,19 @@ export const AnswerCard = (props: ICardProps) => {
 
   const userAnswer = getAnswerByQuestionId(question.id);
 
+  /*
+  .row-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  */
   return (
     <section className="answer-card">
       <div className="row-centered card__header">
-        <Tag variant="negative">{`${question.position}/${questionsCount}`}</Tag>
+        <Tag /*variant="negative"*/
+        >{`${question.position}/${questionsCount}`}</Tag>
       </div>
       <h2 className="question">{question.question.en}</h2>
       {question.questionType === "yes-no" ? (

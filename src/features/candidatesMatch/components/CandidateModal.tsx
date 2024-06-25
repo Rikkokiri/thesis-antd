@@ -1,8 +1,10 @@
 import { ButtonLink } from "@components/ButtonLink/ButtonLink";
 import "../styles/CandidateModal.css";
-import { Modal } from "@components/Modal/Modal";
+import { Flex, Image, Modal, Progress, Typography } from "antd";
 import { useTranslation } from "react-i18next";
 import { MatchWithDetails } from "../types";
+
+const { Title, Text } = Typography;
 
 interface ICandidateModalProps {
   isOpen: boolean;
@@ -19,25 +21,66 @@ export const CandidateModal = ({
   const { name, percentage, logoSrc, brandColor } = candidate;
 
   return (
-    <Modal isOpen={isOpen} closeModal={closeModal}>
-      <div className="candidate-modal__body">
-        <div className="candidate-modal__img-wrapper">
-          <img src={logoSrc} aria-hidden className="candidate-modal__img" />
-          <div
+    <Modal open={isOpen} onCancel={closeModal} footer={[]}>
+      <Flex>
+        <Flex vertical justify="flex-start" align="center">
+          <Image
+            preview={false}
+            width={64}
+            height={85}
+            src={logoSrc}
+            aria-hidden
+            // TODO: Ant Design - Image background color
+            style={{
+              padding: "0.25rem",
+              borderRadius: 4,
+              backgroundColor: "var(--gray10)",
+            }}
+          />
+          {/*<div
             className="candidate-modal__score-visual"
             aria-hidden
             style={{ width: `${percentage}%`, backgroundColor: brandColor }}
+          ></div>*/}
+          <Progress
+            percent={percentage}
+            strokeColor={brandColor}
+            trailColor="transparent"
+            size={4}
+            status="normal"
+            percentPosition={{ align: "center", type: "outer" }}
+            showInfo={false}
           />
-          <span className="candidate-modal__score">{`${percentage}%`}</span>
-        </div>
-        <div className="candidate-modal__details-section">
-          <h3 className="candidate-modal__name">{name}</h3>
-          <span className="candidate-modal__number body-small">
+          <Text className="candidate-modal__score">{`${percentage}%`}</Text>
+        </Flex>
+        <Flex
+          vertical
+          align="flex-start"
+          justify="flex-start"
+          style={{ paddingLeft: 18 }}
+          // className="candidate-modal__details-section"
+        >
+          <Title
+            level={3}
+            className="candidate-modal__name"
+            style={{ margin: 0 }}
+          >
+            {name}
+          </Title>
+          <Text
+            className="body-small"
+            style={{ marginTop: 10, fontWeight: 700 }}
+          >
             {t("candidate.number")} {candidate.number}
-          </span>
-        </div>
-      </div>
-      <div className="candidate-modal__actions">
+          </Text>
+        </Flex>
+      </Flex>
+      <Flex
+        vertical
+        justify="flex-end"
+        align="center"
+        style={{ paddingTop: "2rem" }}
+      >
         <ButtonLink
           to={`/candidates/${candidate.id}`}
           variant="outline"
@@ -45,7 +88,7 @@ export const CandidateModal = ({
         >
           {t("candidate.getToKnow")}
         </ButtonLink>
-      </div>
+      </Flex>
     </Modal>
   );
 };

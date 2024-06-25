@@ -1,0 +1,27 @@
+/**
+* Card variants can be used by applying the following classes to the card component's classNames prop:
+* - question-card
+* - answer-card
+* - section-card
+*/
+
+.eb-card,
+.eb-card:not(.and-card-bordered) {
+  box-shadow: none;
+}
+
+.eb-card {
+  max-width: 680px;
+  height: fit-content;
+  border: none;
+}
+
+.eb-card .ant-card-head {
+  padding: 21px 24px 16px;
+  height: fit-content;
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: 900;
+  border-bottom-width: 2px;
+  border-bottom-color: var(--bg-primary);
+}

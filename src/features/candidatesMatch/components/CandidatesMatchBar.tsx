@@ -34,9 +34,9 @@ export const CandidatesMatchBar = (
           onClick={() => setResultsHidden(!resultsHidden)}
           untoggledIcon={<FiEye />}
           toggledIcon={<FiEyeOff />}
-          variant="ghost"
-          size="medium"
-          iconSize={24}
+          // variant="ghost"
+          // size="medium"
+          // iconSize={24}
           className="match-bar__toggle"
           toggledClassName="toggled-transparent"
         />
@@ -44,6 +44,16 @@ export const CandidatesMatchBar = (
     </header>
   );
 };
+
+/*
+.column-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+*/
 
 const MatchPlaceholder = () => {
   return (

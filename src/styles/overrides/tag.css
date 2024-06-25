@@ -1,0 +1,14 @@
+.eb-tag {
+  font-weight: 800;
+  padding-inline: 0.5rem;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 0;
+}
+
+/* .eb-tag.negative {
+  color: var(--tag-negative-text);
+  background-color: var(--tag-negative-bg);
+} */

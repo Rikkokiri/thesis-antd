@@ -1,11 +1,12 @@
 import "../styles/AnswerList.css";
 import { useState } from "react";
+import { Card, Divider } from "antd";
 import { useCandidateAnswers } from "../hooks/useCandidateAnswers";
 import { AnswerCard } from "./AnswerCard";
-import { SectionCard } from "@components/SectionCard.tsx/SectionCard";
 import { ToggleButton } from "@components/ToggleButton/ToggleButton";
 import { FiMinus } from "react-icons/fi";
 import { FiPlus } from "react-icons/fi";
+import { RowCentered } from "@layout/index";
 
 export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
   const { t, questions, candidateAnswers, candidateImgSrc } = props;
@@ -14,7 +15,7 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
 
   return (
     <article className="answer-list">
-      <SectionCard title={t("candidateSections.answers")}>
+      <Card title={t("candidateSections.answers")} bordered={false}>
         <>
           {questionsToShow.map((question) => (
             <AnswerCard
@@ -28,20 +29,27 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
             />
           ))}
         </>
-        <div className="separator"></div>
-        <div className="answer-list__expand p-24 row-centered">
+
+        <Divider
+          style={{
+            width: "calc(100% - 2 * 24px)",
+            minWidth: "fit-content",
+            margin: "0 auto",
+          }}
+        />
+        <RowCentered style={{ padding: 24 }}>
           <ToggleButton
             isToggled={isExpanded}
             onClick={() => setExpanded(!isExpanded)}
             toggledIcon={<FiMinus />}
             untoggledIcon={<FiPlus />}
-            iconSize={24}
+            // iconSize={24}
             className="answer-list__expand-button"
           >
             {isExpanded ? t("showFewer") : t("showMore")}
           </ToggleButton>
-        </div>
-      </SectionCard>
+        </RowCentered>
+      </Card>
     </article>
   );
 };

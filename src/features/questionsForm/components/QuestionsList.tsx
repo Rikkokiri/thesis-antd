@@ -1,15 +1,15 @@
 import { QuestionCard } from "./QuestionCard";
 import { IQuestionsForm } from "../hooks/useQuestionsForm";
 import { Question } from "src/data/types";
-import "../styles/QuestionsForm.css";
+import { Flex } from "antd";
 
 export const QuestionsList = (props: IQuestionsForm) => {
   const { categoriesAndQuestions, questionsTotalCount, answers } = props;
 
   return (
-    <section className="questions-list">
+    <section style={{ width: "100%" }}>
       {categoriesAndQuestions.map((category) => (
-        <article key={category.id} className="question-page__category-section">
+        <Flex vertical align="center" key={category.id}>
           {category.questions.map((question: Question) => (
             <QuestionCard
               key={question.id}
@@ -21,7 +21,7 @@ export const QuestionsList = (props: IQuestionsForm) => {
               toggleQuestionHiding={props.toggleQuestionHiding}
             />
           ))}
-        </article>
+        </Flex>
       ))}
       {/* TODO: Link to results page */}
     </section>

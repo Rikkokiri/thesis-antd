@@ -1,38 +1,24 @@
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--card-bg);
-  margin-bottom: 1.5rem;
-  padding: 5rem 1.5rem;
-  border-radius: var(--border-radius-sm);
-  max-width: 680px;
-}
-
-.card__header {
-  gap: 1.5rem;
-}
-
+/* TODO: Define typography style? */
 .category {
-  /* TODO: Define typography style? */
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 700;
 }
 
-.question {
+.question-card__body {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  max-width: 343px;
+}
+
+.ant-typography.question {
   font-weight: 900;
-  font-size: 24px;
+  color: var(--text-primary);
+
+  /* font-size: 24px; */
   max-width: 343px;
   text-align: center;
   margin: 20px 0;
-}
-
-.info-buttons {
-  margin-top: 6px;
-  margin-bottom: 18px;
-}
-
-.answer__radio {
-  padding-top: 8px;
+  line-height: 1.5;
 }

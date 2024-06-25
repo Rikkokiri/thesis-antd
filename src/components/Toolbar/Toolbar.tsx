@@ -1,19 +1,32 @@
 import { useTranslation } from "react-i18next";
-import "./Toolbar.css";
 import { Link } from "react-router-dom";
 import { Route } from "src/routes";
+import { Flex } from "antd";
 
 export const Toolbar = () => {
   const { t } = useTranslation();
 
+  // TODO: Make sure links don't have underline on hover either
+
+  const toolbarNavStyles: React.CSSProperties = {
+    maxWidth: "var(--toolbar-max-width)",
+    width: "100%",
+    fontWeight: 700,
+  };
+
+  const toolbarLogo: React.CSSProperties = {
+    height: "40px",
+    width: "40px",
+    background: "var(--yle-logo)",
+    borderRadius: "2px",
+  };
+
   return (
-    <header className="toolbar">
-      <nav className="toolbar__nav">
-        <div className="toolbar__logo-wrapper">
-          <div className="toolbar__logo"></div>
-          <Link to={Route.ROOT}>{t("navigation.frontPage")}</Link>
-        </div>
-      </nav>
-    </header>
+    <Flex component="nav" style={toolbarNavStyles}>
+      <Flex align="center" gap="24px">
+        <div style={toolbarLogo}></div>
+        <Link to={Route.ROOT}>{t("navigation.frontPage")}</Link>
+      </Flex>
+    </Flex>
   );
 };
