@@ -5,7 +5,7 @@ interface IToggleButtonProps extends ButtonProps {
   isToggled: boolean;
   untoggledIcon?: JSX.Element;
   toggledIcon?: JSX.Element;
-  toggledClassName?: string;
+  toggledClassName?: "toggled" | "toggled-ghost";
   toggledType?: ButtonProps["type"];
 }
 
@@ -15,24 +15,20 @@ export const ToggleButton = ({
   onClick,
   untoggledIcon,
   toggledIcon,
-  type = "primary",
+  type = "default",
   toggledType = "default",
   size = "large",
-  // iconSize,
-  // className,
-  // toggledClassName = "toggled",
+  className,
+  toggledClassName = "toggled",
   ...rest
 }: IToggleButtonProps) => {
   return (
     <Button
       onClick={onClick}
       icon={isToggled ? toggledIcon : untoggledIcon}
-      // className={`toggle-button ${isToggled ? toggledClassName : ""} ${className || ""}`}
-      // variant={variant}
+      className={`toggle-button ${isToggled ? toggledClassName : ""} ${className || ""}`}
       type={isToggled ? toggledType : type}
-      ghost={!isToggled}
       size={size}
-      // iconSize={iconSize}
       {...rest}
     >
       {children}

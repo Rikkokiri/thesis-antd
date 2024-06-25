@@ -6,8 +6,6 @@ import { ThemeConfig } from "antd";
 
 export const baseTheme: ThemeConfig = {
   token: {
-    // Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`.
-    // colorBgContainer: "#fff",
     borderRadius: 4,
     fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
     fontSize: 16,
@@ -33,13 +31,8 @@ export const baseTheme: ThemeConfig = {
     Layout: {
       headerHeight: 72,
       headerPadding: "0 24px",
-      // TODO: headerBg
       // Footer styles:
       footerPadding: "21px 0",
-      // TODO: footerBg
-      /* bodyBg: "var(--gray-10)",
-      footerBg: "var(--gray-5)",
-      headerBg: "#fff", */
     },
     Button: {
       borderRadius: 100,
@@ -50,7 +43,6 @@ export const baseTheme: ThemeConfig = {
       fontWeight: 700,
       defaultShadow: "none",
       primaryShadow: "none",
-      // primaryColor: "#fff", // Text color of primary button
       // Button padding:
       paddingBlockLG: 4, // Vertical padding of button
       paddingInlineLG: 16, // Horizontal padding of button
@@ -60,8 +52,6 @@ export const baseTheme: ThemeConfig = {
     Card: {
       headerFontSize: 20,
     },
-    // TODO: Style tags
-    Tag: {},
     Typography: {
       titleMarginBottom: 0,
       titleMarginTop: 0,

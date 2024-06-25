@@ -30,15 +30,15 @@ export const CandidatesMatchBar = (
               ))}
         </div>
         <ToggleButton
+          classNames={{
+            icon: "icon-24",
+          }}
           isToggled={resultsHidden}
           onClick={() => setResultsHidden(!resultsHidden)}
           untoggledIcon={<FiEye />}
           toggledIcon={<FiEyeOff />}
-          // variant="ghost"
-          // size="medium"
-          // iconSize={24}
           className="match-bar__toggle"
-          toggledClassName="toggled-transparent"
+          toggledClassName="toggled-ghost"
         />
       </div>
     </header>
