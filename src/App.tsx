@@ -49,6 +49,7 @@ function App() {
       wave={{ disabled: true }} // Disable wave effect when e.g. clicking a button
       // Class names so those can be customized (beyond theme's capabilities)
       button={{ className: "eb-button" }}
+      card={{ className: "eb-card" }}
       tag={{ className: "eb-tag" }}
     >
       <ConfigProvider
@@ -70,7 +71,7 @@ function App() {
           <Content style={contentStyles}>
             <Outlet />
           </Content>
-          <Footer>
+          <Footer style={{ lineHeight: 1.5 }}>
             <Flex
               justify="center"
               wrap="wrap"

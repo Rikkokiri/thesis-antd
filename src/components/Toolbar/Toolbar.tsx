@@ -10,6 +10,7 @@ export const Toolbar = () => {
 
   const toolbarNavStyles: React.CSSProperties = {
     maxWidth: "var(--toolbar-max-width)",
+    width: "100%",
     fontWeight: 700,
   };
 

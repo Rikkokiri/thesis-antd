@@ -25,6 +25,7 @@ export const AdditionalInfo = (props: IAdditionalInfoProps) => {
         onClick={() => setIsModalOpen(true)}
         untoggledIcon={<FiInfo />}
         toggledIcon={<FiInfo />}
+        type="text"
         size="middle"
         toggledClassName=""
       >

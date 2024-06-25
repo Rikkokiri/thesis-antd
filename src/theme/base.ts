@@ -13,13 +13,15 @@ export const baseTheme: ThemeConfig = {
     borderRadius: 4,
     fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
     fontSize: 16,
+    lineHeight: 1.5,
     fontSizeSM: 12,
+    fontWeightStrong: 700,
     lineWidthFocus: 2,
     // Heading styles
     fontSizeHeading1: 28,
-    lineHeightHeading1: 1.2,
+    lineHeightHeading1: 1.3,
     fontSizeHeading2: 24,
-    lineHeightHeading2: 1.2,
+    lineHeightHeading2: 1.5,
     fontSizeHeading3: 18,
     lineHeightHeading3: 1.2,
     // linkDecoration,
@@ -45,6 +47,8 @@ export const baseTheme: ThemeConfig = {
       borderRadius: 100,
       borderRadiusLG: 100,
       contentFontSizeLG: 16,
+      contentFontSize: 12,
+      contentLineHeightLG: 20,
       fontWeight: 700,
       defaultShadow: "none",
       primaryShadow: "none",
@@ -60,5 +64,9 @@ export const baseTheme: ThemeConfig = {
     },
     // TODO: Style tags
     Tag: {},
+    Typography: {
+      titleMarginBottom: 0,
+      titleMarginTop: 0,
+    },
   },
 };

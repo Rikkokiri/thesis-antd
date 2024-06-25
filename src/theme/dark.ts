@@ -30,5 +30,8 @@ export const darkTheme: ThemeConfig = {
       defaultBg: "var(--gray-5)", // Default background color
       defaultColor: "var(--blue-black)", // Default text color
     },
+    Typography: {
+      colorTextHeading: "#fff",
+    },
   },
 };

@@ -28,13 +28,19 @@ export const FrontPage = () => {
           width: "100%",
         }}
       >
-        <Title style={{ marginBottom: "1rem" }} className="heading-1">
+        <Title
+          style={{ marginBottom: "1rem", fontWeight: 900 }}
+          // className="heading-1"
+        >
           {t("frontPage.title")}
         </Title>
         <Button
+          /* classNames={{
+            icon: "icon-20",
+          }} */
           type="primary"
           size="large"
-          icon={<FiChevronRight />}
+          icon={<FiChevronRight style={{ fontSize: "1.25rem" }} />}
           iconPosition="end"
           onClick={startCompass}
         >

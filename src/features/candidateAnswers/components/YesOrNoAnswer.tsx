@@ -41,8 +41,8 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
         return (
           <div className="yes-or-no-answer__option" key={option.value}>
             <ToggleButton
-              isDisabled
-              variant="outline"
+              // isDisabled
+              // variant="outline"
               isToggled={isToggled}
               toggledIcon={
                 <CandidateIndicator
@@ -50,7 +50,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                   imgSrc={candidateImgSrc}
                 />
               }
-              iconSize={isToggled ? 24 : undefined}
+              // iconSize={isToggled ? 24 : undefined}
               untoggledIcon={
                 option.value === YesNoAnswer.YES ? (
                   <RiThumbUpLine />

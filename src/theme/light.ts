@@ -31,10 +31,15 @@ export const lightTheme: ThemeConfig = {
       defaultHoverBorderColor: "var(--blue-black)",
       defaultHoverColor: "var(--blue-black)",
     },
-    Card: {},
+    Card: {
+      boxShadow: "none",
+    },
     Tag: {
       defaultBg: "var(--blue-black)", // Default background color
       defaultColor: "var(--gray-5)", // Default text color
+    },
+    Typography: {
+      colorTextHeading: "var(--dark-blue)",
     },
   },
 };

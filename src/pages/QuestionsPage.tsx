@@ -1,13 +1,24 @@
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
-import "./QuestionsPage.css";
 import { FiArrowDown } from "react-icons/fi";
 import { QuestionForm } from "../features/questionsForm";
 import { CandidatesMatch } from "src/features/candidatesMatch";
 import { getQuestionsTotalCount } from "@data/api";
 import { useRef } from "react";
 import { Button, Flex, Typography } from "antd";
+import { TextProps } from "antd/es/typography/Text";
 const { Text, Title } = Typography;
+
+const PageIntro = (props: TextProps) => {
+  return (
+    <Text
+      className="page-intro"
+      style={{ margin: "1rem 1rem 2rem", lineHeight: 1.5, maxWidth: "680px" }}
+    >
+      {props.children}
+    </Text>
+  );
+};
 
 export const QuestionsPage = () => {
   const { t } = useTranslation();
@@ -36,11 +47,14 @@ export const QuestionsPage = () => {
         <Text className="subtitle" style={{ margin: 0 }}>
           {t("electionName")}
         </Text>
-        <Title level={1} className="heading-1 question-page__title">
+        <Title
+          level={1}
+          style={{ lineHeight: 1.3, fontWeight: 900 }}
+          className="heading-1"
+        >
           {t("questionPage.findYourCandidate")}
         </Title>
-        <Text className="page-intro">{t("questionPage.description")}</Text>
-
+        <PageIntro>{t("questionPage.description")}</PageIntro>
         <Button
           icon={<FiArrowDown />}
           type="primary"
@@ -56,9 +70,14 @@ export const QuestionsPage = () => {
         </Button>
         <div ref={questionsStartRef} />
       </Flex>
-      <div className="question-page__content" ref={ref}>
+      <Flex
+        vertical
+        align="center"
+        style={{ width: "100%", paddingTop: 24 }}
+        ref={ref}
+      >
         <QuestionForm />
-      </div>
+      </Flex>
     </>
   );
 };

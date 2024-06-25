@@ -17,7 +17,9 @@ export const CandidateIntroHeader = (
     <div className="candidate-header">
       <div>
         <p className="subtitle m-0">{t("electionName")}</p>
-        <Title className="heading-1-large m-0">{candidate.name}</Title>
+        <Title level={1} style={{ fontSize: "32px" }}>
+          {candidate.name}
+        </Title>
       </div>
       {candidate.organization ||
         (candidate.creator && (

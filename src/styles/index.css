@@ -1,20 +1,18 @@
 @import "./colors.css";
 @import "./variables.css";
-
-/*
 @import "./reset.css";
-@import "./typography.css";
-*/
 
-@import "./themes/light-theme.css";
-@import "./themes/dark-theme.css";
+/* @import "./typography.css"; */
+
+@import "./overrides/button.css";
+@import "./overrides/card.css";
 @import "./overrides/modal.css";
 @import "./overrides/tag.css";
+@import "./themes/dark-theme.css";
+@import "./themes/light-theme.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* TODO: Update font family */
-  line-height: 1.5;
-  font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;

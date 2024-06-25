@@ -6,6 +6,7 @@ interface IToggleButtonProps extends ButtonProps {
   untoggledIcon?: JSX.Element;
   toggledIcon?: JSX.Element;
   toggledClassName?: string;
+  toggledType?: ButtonProps["type"];
 }
 
 export const ToggleButton = ({

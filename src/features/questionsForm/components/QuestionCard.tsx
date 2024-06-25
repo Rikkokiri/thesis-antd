@@ -35,7 +35,17 @@ export const QuestionCard = (props: ICardProps) => {
   const questionNumber = category.position + question.position + 1;
 
   return (
-    <Card /*section className="card"*/ bordered={false}>
+    <Card
+      bordered={false}
+      classNames={{
+        body: "question-card__body",
+      }}
+      style={{
+        padding: "5rem 1.5rem",
+        marginBottom: "1.5rem",
+        width: "100%",
+      }}
+    >
       <RowCentered gap="1.5rem">
         <Tag bordered={false}>{`${questionNumber}/${questionsCount}`}</Tag>
         <Text className="category">{category.name.en}</Text>
@@ -52,7 +62,8 @@ export const QuestionCard = (props: ICardProps) => {
           isToggled={!!answer?.hideQuestion}
           untoggledIcon={<FiEyeOff />}
           toggledIcon={<FiEyeOff />}
-          // variant="ghost"
+          type="text"
+          toggledType="default"
           size="middle"
         >
           {t("question.hide")}
