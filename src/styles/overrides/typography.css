@@ -1,0 +1,23 @@
+.eb-typography.heading-xxl {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.eb-typography.subtitle {
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading-primary);
+}
+
+.eb-typography.body-small {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+.eb-typography.bold-label {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 700;
+}

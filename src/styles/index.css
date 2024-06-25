@@ -2,12 +2,12 @@
 @import "./variables.css";
 @import "./reset.css";
 
-/* @import "./typography.css"; */
-
+/* Override files to style components beyond theme's capabilities */
 @import "./overrides/button.css";
 @import "./overrides/card.css";
 @import "./overrides/modal.css";
 @import "./overrides/tag.css";
+@import "./overrides/typography.css";
 @import "./themes/dark-theme.css";
 @import "./themes/light-theme.css";
 

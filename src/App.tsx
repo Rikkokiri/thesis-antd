@@ -51,6 +51,7 @@ function App() {
       button={{ className: "eb-button" }}
       card={{ className: "eb-card" }}
       tag={{ className: "eb-tag" }}
+      typography={{ className: "eb-typography" }}
     >
       <ConfigProvider
         theme={{
