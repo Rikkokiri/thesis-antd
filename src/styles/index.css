@@ -1,10 +1,15 @@
 @import "./colors.css";
 @import "./variables.css";
 
-/* @import "./reset.css"; */
+/*
+@import "./reset.css";
 @import "./typography.css";
+*/
+
 @import "./themes/light-theme.css";
 @import "./themes/dark-theme.css";
+@import "./overrides/modal.css";
+@import "./overrides/tag.css";
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* TODO: Update font family */
@@ -33,11 +38,4 @@ header a,
 header a:hover,
 header a:visited {
   text-decoration: none;
-}
-
-.page-header {
-  padding: 24px;
-  text-align: center;
-  background-color: var(--page-header-bg);
-  width: 100%;
 }
