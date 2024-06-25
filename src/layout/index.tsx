@@ -26,3 +26,15 @@ export const RowCentered = ({ style, ...rest }: FlexPropsWithStyles) => {
     />
   );
 };
+
+export const ColumnCentered = ({ style, ...rest }: FlexPropsWithStyles) => {
+  return (
+    <Flex
+      vertical
+      justify="center"
+      align="center"
+      style={{ ...style }}
+      {...rest}
+    />
+  );
+};

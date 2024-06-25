@@ -4,7 +4,7 @@ import { FiArrowDown } from "react-icons/fi";
 import { QuestionForm } from "../features/questionsForm";
 import { CandidatesMatch } from "src/features/candidatesMatch";
 import { getQuestionsTotalCount } from "@data/api";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Button, Flex, Typography } from "antd";
 import { TextProps } from "antd/lib/typography/Text";
 const { Text, Title } = Typography;
@@ -20,20 +20,24 @@ const PageIntro = (props: TextProps) => {
   );
 };
 
+const PageHeaderStyles: React.CSSProperties = {
+  width: "100%",
+  textAlign: "center",
+  backgroundColor: "var(--page-header-bg)",
+  padding: "2rem 0",
+};
+
 export const QuestionsPage = () => {
   const { t } = useTranslation();
   const questionsTotalCount = getQuestionsTotalCount();
   const { ref, inView } = useInView({
-    threshold: (1 / questionsTotalCount) * 1.5, // Reveal when half of second card is in view
+    threshold: (1 / questionsTotalCount) * 1.25, // Reveal when half of second card is in view
   });
   const questionsStartRef = useRef<HTMLDivElement | null>(null);
 
-  const PageHeaderStyles: React.CSSProperties = {
-    width: "100%",
-    textAlign: "center",
-    backgroundColor: "var(--page-header-bg)",
-    padding: "2rem 0",
-  };
+  useEffect(() => {
+    console.log("Match bar should be in view: ", inView);
+  }, [inView]);
 
   return (
     <>
@@ -66,14 +70,18 @@ export const QuestionsPage = () => {
         </Button>
         <div ref={questionsStartRef} />
       </Flex>
-      <Flex
-        vertical
-        align="center"
-        style={{ width: "100%", paddingTop: 24 }}
+      <div
         ref={ref}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          paddingTop: 24,
+          alignItems: "center",
+        }}
       >
         <QuestionForm />
-      </Flex>
+      </div>
     </>
   );
 };

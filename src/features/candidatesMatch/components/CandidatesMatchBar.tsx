@@ -6,6 +6,7 @@ import { FiEye } from "react-icons/fi";
 import { MatchButton } from "./MatchButton";
 import { useCandidatesMatch } from "../hooks/useCandidatesMatch";
 import { MatchWithDetails } from "../types";
+import { ColumnCentered } from "@layout/index";
 
 export const CandidatesMatchBar = (
   props: ReturnType<typeof useCandidatesMatch>,
@@ -38,28 +39,22 @@ export const CandidatesMatchBar = (
           untoggledIcon={<FiEye />}
           toggledIcon={<FiEyeOff />}
           className="match-bar__toggle"
-          toggledClassName="toggled-ghost"
+          type="text"
+          style={{ borderRadius: "4px" }}
+          toggleStyle="hoverless"
         />
       </div>
     </header>
   );
 };
 
-/*
-.column-centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-*/
-
 const MatchPlaceholder = () => {
   return (
-    <div className="column-centered placeholder-match">
+    <ColumnCentered
+      style={{ width: "2rem", justifyContent: "space-between", height: "100%" }}
+    >
       <div className="placeholder-candidate"></div>
       <div className="placeholder-score"></div>
-    </div>
+    </ColumnCentered>
   );
 };

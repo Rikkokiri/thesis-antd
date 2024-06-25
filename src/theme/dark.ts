@@ -23,6 +23,7 @@ export const darkTheme: ThemeConfig = {
       defaultHoverBg: "var(--white-17)",
       defaultHoverBorderColor: "var(--gray-5)",
       defaultHoverColor: "var(--gray-5)",
+      textHoverBg: "transparent",
     },
     Tag: {
       defaultBg: "var(--gray-5)", // Default background color

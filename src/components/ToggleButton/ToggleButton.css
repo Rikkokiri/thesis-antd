@@ -1,17 +1,11 @@
-.toggle-button.toggled {
+.eb-button.toggle-button.toggled.bg,
+.eb-button.toggle-button.toggled.bg:hover,
+.eb-button.toggle-button.toggled.hoverless {
   background-color: var(--button-toggled-bg);
 }
 
 .eb-button.toggle-button:disabled {
   color: inherit;
   border-color: var(--button-outline-disabled);
-  background-color: transparent;
-}
-
-.toggle-button.toggled:disabled {
-  background-color: var(--button-toggled-bg);
-}
-
-.toggle-button.toggled-ghost {
   background-color: transparent;
 }

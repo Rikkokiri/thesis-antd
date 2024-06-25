@@ -23,6 +23,7 @@ export const lightTheme: ThemeConfig = {
       defaultHoverBg: "var(--black-9)",
       defaultHoverBorderColor: "var(--blue-black)",
       defaultHoverColor: "var(--blue-black)",
+      textHoverBg: "transparent",
     },
     Card: {
       boxShadow: "none",

@@ -63,8 +63,8 @@ export const QuestionCard = (props: ICardProps) => {
           untoggledIcon={<FiEyeOff />}
           toggledIcon={<FiEyeOff />}
           type="text"
-          toggledType="text"
           size="middle"
+          toggleStyle="hoverless"
         >
           {t("question.hide")}
         </ToggleButton>

@@ -53,7 +53,7 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
             onClick={() => setExpanded(!isExpanded)}
             toggledIcon={<FiMinus />}
             untoggledIcon={<FiPlus />}
-            toggledClassName="toggled-ghost"
+            toggleStyle="stateless"
           >
             {isExpanded ? t("showFewer") : t("showMore")}
           </ToggleButton>
