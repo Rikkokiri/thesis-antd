@@ -27,7 +27,7 @@ export const AdditionalInfo = (props: IAdditionalInfoProps) => {
         toggledIcon={<FiInfo />}
         type="text"
         size="middle"
-        toggledClassName=""
+        toggleStyle="stateless"
       >
         {t("question.whatAbout")}
       </ToggleButton>

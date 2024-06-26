@@ -1,0 +1,54 @@
+.eb-radio.ant-radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.eb-radio.ant-radio-wrapper .ant-radio-inner {
+  border: none;
+  background-color: var(--radio-background);
+}
+
+/* Indicator */
+.eb-radio.ant-radio-wrapper .ant-radio-inner::after {
+  background-color: var(--disagree);
+  transform: scale(0.75);
+}
+
+.ant-radio-wrapper::after,
+.eb-radio.ant-radio-wrapper .ant-radio-checked::after {
+  display: none;
+}
+
+.eb-radio.disagree .ant-radio-inner::after {
+  background-color: var(--disagree);
+}
+
+.eb-radio.agree .ant-radio-inner::after {
+  background-color: var(--agree);
+}
+
+.eb-radio.readonly * {
+  cursor: not-allowed;
+}
+
+@keyframes scale-option {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after {
+  animation-name: scale-option;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  transition: background-color 0.3s ease 0s;
+  outline: 0.25rem solid var(--radio-background);
+}

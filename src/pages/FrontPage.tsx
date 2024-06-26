@@ -28,16 +28,10 @@ export const FrontPage = () => {
           width: "100%",
         }}
       >
-        <Title
-          style={{ marginBottom: "1rem", fontWeight: 900 }}
-          // className="heading-1"
-        >
+        <Title level={1} style={{ marginBottom: "1rem", fontWeight: 900 }}>
           {t("frontPage.title")}
         </Title>
         <Button
-          /* classNames={{
-            icon: "icon-20",
-          }} */
           type="primary"
           size="large"
           icon={<FiChevronRight style={{ fontSize: "1.25rem" }} />}

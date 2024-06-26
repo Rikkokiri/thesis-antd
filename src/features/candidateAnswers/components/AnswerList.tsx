@@ -15,7 +15,13 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
 
   return (
     <article className="answer-list">
-      <Card title={t("candidateSections.answers")} bordered={false}>
+      <Card
+        title={t("candidateSections.answers")}
+        bordered={false}
+        classNames={{
+          body: "answer-list__card-body",
+        }}
+      >
         <>
           {questionsToShow.map((question) => (
             <AnswerCard
@@ -35,16 +41,19 @@ export const AnswerList = (props: ReturnType<typeof useCandidateAnswers>) => {
             width: "calc(100% - 2 * 24px)",
             minWidth: "fit-content",
             margin: "0 auto",
+            borderColor: "var(--separator)",
           }}
         />
         <RowCentered style={{ padding: 24 }}>
           <ToggleButton
+            classNames={{
+              icon: "icon-24",
+            }}
             isToggled={isExpanded}
             onClick={() => setExpanded(!isExpanded)}
             toggledIcon={<FiMinus />}
             untoggledIcon={<FiPlus />}
-            // iconSize={24}
-            className="answer-list__expand-button"
+            toggleStyle="stateless"
           >
             {isExpanded ? t("showFewer") : t("showMore")}
           </ToggleButton>

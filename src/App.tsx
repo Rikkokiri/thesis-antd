@@ -50,7 +50,9 @@ function App() {
       // Class names so those can be customized (beyond theme's capabilities)
       button={{ className: "eb-button" }}
       card={{ className: "eb-card" }}
+      radio={{ className: "eb-radio" }}
       tag={{ className: "eb-tag" }}
+      typography={{ className: "eb-typography" }}
     >
       <ConfigProvider
         theme={{

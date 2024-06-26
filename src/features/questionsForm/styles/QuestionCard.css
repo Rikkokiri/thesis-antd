@@ -1,24 +1,6 @@
-/* TODO: Define typography style? */
-.category {
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-}
-
 .question-card__body {
   margin: 0 auto;
   width: 100%;
   text-align: center;
   max-width: 343px;
-}
-
-.ant-typography.question {
-  font-weight: 900;
-  color: var(--text-primary);
-
-  /* font-size: 24px; */
-  max-width: 343px;
-  text-align: center;
-  margin: 20px 0;
-  line-height: 1.5;
 }

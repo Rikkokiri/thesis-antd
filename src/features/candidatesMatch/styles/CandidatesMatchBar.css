@@ -8,7 +8,7 @@
   justify-content: center;
   height: var(--match-bar-height);
   width: 100%;
-  background-color: var(--toolbar-bg); /* TODO: Double check color */
+  background-color: var(--toolbar-bg);
   box-shadow: var(--match-bar-shadow);
 }
 
@@ -51,17 +51,4 @@
 
 .placeholder-score {
   height: 18px;
-}
-
-/**
-* Match visibility toggle
-*/
-.button.match-bar__toggle {
-  border-radius: 4px; /* var(--border-radius-sm); */
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.match-bar__toggle.toggled-transparent {
-  background-color: transparent;
 }

@@ -1,6 +1,5 @@
-import "../styles/AnswerCard.css";
 import { useTranslation } from "react-i18next";
-import { Tag } from "antd";
+import { Flex, Tag, Typography } from "antd";
 import { Question } from "@data/types";
 import { RadioAnswer } from "./RadioAnswer";
 import { YesOrNoAnswer } from "./YesOrNoAnswer";
@@ -8,6 +7,8 @@ import { CandidateAnswer } from "@data/candidateAnswers";
 import { CommentCard } from "./CommentCard";
 import { useLocalizedString } from "@hooks/useLocalizedString";
 import { getAnswerByQuestionId } from "@stores/answerStore";
+import { RowCentered } from "@layout/index";
+const { Title } = Typography;
 
 interface ICardProps {
   question: Question;
@@ -28,21 +29,23 @@ export const AnswerCard = (props: ICardProps) => {
 
   const userAnswer = getAnswerByQuestionId(question.id);
 
-  /*
-  .row-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  */
   return (
-    <section className="answer-card">
-      <div className="row-centered card__header">
-        <Tag /*variant="negative"*/
+    <Flex
+      className="answer-card"
+      component="section"
+      vertical
+      align="center"
+      style={{ padding: "1.5rem" }}
+    >
+      <RowCentered>
+        <Tag
+          bordered={false}
+          className="tag-negative"
         >{`${question.position}/${questionsCount}`}</Tag>
-      </div>
-      <h2 className="question">{question.question.en}</h2>
+      </RowCentered>
+      <Title level={2} className="question">
+        {question.question.en}
+      </Title>
       {question.questionType === "yes-no" ? (
         <YesOrNoAnswer
           questionId={questionId}
@@ -67,6 +70,6 @@ export const AnswerCard = (props: ICardProps) => {
           answer={candidateAnswer?.answer}
         />
       )}
-    </section>
+    </Flex>
   );
 };

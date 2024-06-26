@@ -9,7 +9,7 @@ export const PageSectionsColumn = ({ style, ...rest }: FlexPropsWithStyles) => {
   return (
     <Flex
       vertical
-      gap={6}
+      gap={"1.5rem"}
       style={{ maxWidth: "680px", width: "100%", ...style }}
       {...rest}
     />
@@ -22,6 +22,18 @@ export const RowCentered = ({ style, ...rest }: FlexPropsWithStyles) => {
       justify="center"
       align="center"
       style={{ width: "100%", ...style }}
+      {...rest}
+    />
+  );
+};
+
+export const ColumnCentered = ({ style, ...rest }: FlexPropsWithStyles) => {
+  return (
+    <Flex
+      vertical
+      justify="center"
+      align="center"
+      style={{ ...style }}
       {...rest}
     />
   );

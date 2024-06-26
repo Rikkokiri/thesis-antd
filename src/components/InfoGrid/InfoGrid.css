@@ -26,4 +26,10 @@ ul.info-grid {
 
 .info-grid__item {
   padding-bottom: 5px;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.info-grid__item.item-bold {
+  font-weight: 700;
 }

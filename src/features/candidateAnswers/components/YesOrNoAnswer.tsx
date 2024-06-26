@@ -1,7 +1,8 @@
+import "../styles/YesOrNoAnswer.css";
 import { TFunction } from "i18next";
 import { RiThumbUpLine } from "react-icons/ri";
 import { RiThumbDownLine } from "react-icons/ri";
-import "../styles/YesOrNoAnswer.css";
+import { Flex } from "antd";
 import { ToggleButton } from "@components/ToggleButton/ToggleButton";
 import { YesNoAnswer, QuestionType } from "@data/types";
 import { SmallSpeechBubble } from "./SmallSpeechBubble";
@@ -34,23 +35,30 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
   ];
 
   return (
-    <div className="yes-or-no-answer__container">
+    <Flex
+      align="flex-end"
+      justify="center"
+      gap="1.5rem"
+      style={{ width: "100%", position: "relative" }}
+      className="yes-or-no-answer__container"
+    >
       {options.map((option) => {
         const isToggled = candidateAnswer === option.value;
 
         return (
-          <div className="yes-or-no-answer__option" key={option.value}>
+          <Flex vertical align="center" key={option.value}>
             <ToggleButton
-              // isDisabled
-              // variant="outline"
+              disabled={true}
               isToggled={isToggled}
+              classNames={{
+                icon: "icon-20",
+              }}
               toggledIcon={
                 <CandidateIndicator
                   alt={""} // TODO: Pass a meaningful alt text
                   imgSrc={candidateImgSrc}
                 />
               }
-              // iconSize={isToggled ? 24 : undefined}
               untoggledIcon={
                 option.value === YesNoAnswer.YES ? (
                   <RiThumbUpLine />
@@ -58,6 +66,7 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                   <RiThumbDownLine />
                 )
               }
+              style={{ marginTop: "0.5rem" }}
             >
               {option.label}
             </ToggleButton>
@@ -69,9 +78,9 @@ export const YesOrNoAnswer = (props: IYesNoAnswerProps) => {
                 className="user-answer-bubble"
               />
             )}
-          </div>
+          </Flex>
         );
       })}
-    </div>
+    </Flex>
   );
 };

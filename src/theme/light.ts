@@ -1,17 +1,13 @@
 import { ThemeConfig } from "antd";
 
-/**
- * Theme customization documentation: https://ant.design/docs/react/customize-theme
- */
-
 export const lightTheme: ThemeConfig = {
   token: {
     colorPrimary: "#131415", // "var(--blue-black)",
     colorText: "var(--blue-black)",
-    // Container background color, e.g: default button, input box, etc. Be sure not to confuse this with `colorBgElevated`.
-    // colorBgContainer: "#fff",
     colorBgContainer: "#fff",
     colorPrimaryHover: "var(--black-70)",
+    colorBgElevated: "#fff",
+    colorBgMask: "var(--black-41)",
   },
   components: {
     Layout: {
@@ -22,14 +18,14 @@ export const lightTheme: ThemeConfig = {
     Button: {
       // Primary button styles
       primaryColor: "#fff", // Text color of primary button
-
       // Default button styles (used as outline button in this app)
-      defaultBg: "var(--black-9)",
+      defaultBg: "transparent",
       defaultBorderColor: "var(--blue-black)",
       defaultColor: "var(--blue-black)", // Text color of default button
       defaultHoverBg: "var(--black-9)",
       defaultHoverBorderColor: "var(--blue-black)",
       defaultHoverColor: "var(--blue-black)",
+      textHoverBg: "transparent",
     },
     Card: {
       boxShadow: "none",
