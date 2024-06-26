@@ -8,7 +8,7 @@
   justify-content: center;
   height: var(--match-bar-height);
   width: 100%;
-  background-color: var(--toolbar-bg); /* TODO: Double check color */
+  background-color: var(--toolbar-bg);
   box-shadow: var(--match-bar-shadow);
 }
 

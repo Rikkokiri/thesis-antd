@@ -6,6 +6,8 @@ export const darkTheme: ThemeConfig = {
     colorText: "var(--gray-5)",
     colorBgContainer: "var(--blue-black)",
     colorPrimaryHover: "var(--white-71)",
+    colorBgElevated: "var(--gray-90)",
+    colorBgMask: "var(--black-70)",
   },
   components: {
     Layout: {

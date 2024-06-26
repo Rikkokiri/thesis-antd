@@ -6,6 +6,8 @@ export const lightTheme: ThemeConfig = {
     colorText: "var(--blue-black)",
     colorBgContainer: "#fff",
     colorPrimaryHover: "var(--black-70)",
+    colorBgElevated: "#fff",
+    colorBgMask: "var(--black-41)",
   },
   components: {
     Layout: {

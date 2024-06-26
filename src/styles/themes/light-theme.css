@@ -6,7 +6,6 @@
   --bg-primary: var(--gray-10);
   --focus-outline-primary: var(--blue-black);
   --toolbar-bg: #fff;
-  --footer-bg: var(--gray-5);
   --page-header-bg: #fff;
 
   /* Button colors */
@@ -19,7 +18,6 @@
   --button-toggled-bg: var(--black-9);
 
   /* Radio buttons */
-  --radio-button-agree: var(--success);
   --radio-background: var(--gray-30);
 
   /* Modals */
